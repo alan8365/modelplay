@@ -7,6 +7,13 @@
 <body>
     上傳檔案
 
+    <form method="post">
+        {% csrf_token %}
 
+        <input type="text" name="filename">
+        <br>
+        <input type="file" name="data">
+        <input type="submit">
+    </form>
 </body>
 </html>

@@ -21,6 +21,12 @@ class Classes(models.Model):
         on_delete=CASCADE,
     )
 
+    # ex:資管
+    name = models.CharField(
+        max_length=40,
+        null=True
+    )
+
     # ex:4
     grade = models.IntegerField()
 
@@ -30,7 +36,7 @@ class Classes(models.Model):
     )
 
     def __str__(self):
-        return self.department + self.grade + self.classes
+        return self.name
 
 class Teacher(models.Model):
 
@@ -43,6 +49,12 @@ class Teacher(models.Model):
         return self.name
 
 class Course(models.Model):
+
+    # ex:D5555
+    id = models.CharField(
+        max_length=10,
+        primary_key=True
+    )
 
     # ex:資料庫
     name = models.CharField(
@@ -74,6 +86,12 @@ class Course(models.Model):
     #ex:林真伊
     teacher = models.ForeignKey(
         'Teacher',
+        on_delete=CASCADE,
+        null=True,
+    )
+
+    classes = models.ForeignKey(
+        'Classes',
         on_delete=CASCADE,
         null=True,
     )

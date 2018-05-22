@@ -1,20 +1,196 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>index</title>
+    <meta charset="utf-8">
+    <title>搜尋</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'jquery-ui.theme.min.css' %}">
+    <link rel="stylesheet" href="{% static 'jquery-ui.structure.min.css'%}">
+    <script src="{% static 'jquery-1.12.4.js' %}"></script>
+    <script src="{% static 'jquery-ui.min.js' %}"></script>
+    <link href="{% static 'jquery-ui.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    <script>
+        $(function() {
+            $("#tabs").tabs();
+            $(".button").button();
+        });
+
+        var empty_search = [];
+    </script>
+
 </head>
+
 <body>
-    <ul>
-        <li>班級</li>
-        <li>名稱</li>
-        <li>教室</li>
-        <li>必選修</li>
-        <li>學分</li>
-        <li>老師</li>
-        <li>名稱</li>
-        <li>目前人數</li>
-        <li>人數上限</li>
-    </ul>
+    <div id="tabs">
+        <ul>
+            <li><a href="#tabs-1">搜尋</a></li>
+            <li><a href="#tabs-2">班級搜尋</a></li>
+            <li><a href="#tabs-3">科目搜尋</a></li>
+        </ul>
+        <div id="tabs-1">
+            <script>
+
+                $(function() {
+
+                    $("#selectable").selectable({
+
+                        filter: ".ui-state-default",
+
+                        stop: function() {
+                            empty_search = []
+                            $(".ui-selected", this).each(function() {
+                                var index = $("#selectable .ui-state-default").index(this);
+                                empty_search.push(index);
+
+                            });
+                        }
+                    });
+                });
+
+            </script>
+
+            <ol id="selectable">
+                <li></li>
+                <li>一</li>
+                <li>二</li>
+                <li>三</li>
+                <li>四</li>
+                <li>五</li>
+                <li>1</li>
+                <li class="ui-state-default"></li>
+                <li class="ui-state-default"></li>
+                <li class="ui-state-default"></li>
+                <li class="ui-state-default"></li>
+                <li class="ui-state-default"></li>
+                <li>2</li>
+                <li class="ui-state-default"></li>
+                <li class="ui-state-default"></li>
+                <li class="ui-state-default"></li>
+                <li class="ui-state-default"></li>
+                <li class="ui-state-default"></li>
+                <li>3</li>
+                <li class="ui-state-default"></li>
+                <li class="ui-state-default"></li>
+                <li class="ui-state-default"></li>
+                <li class="ui-state-default"></li>
+                <li class="ui-state-default"></li>
+                <li>4</li>
+                <li class="ui-state-default"></li>
+                <li class="ui-state-default"></li>
+                <li class="ui-state-default"></li>
+                <li class="ui-state-default"></li>
+                <li class="ui-state-default"></li>
+                <li class="line">
+                    <hr>
+                </li>
+                <li>5</li>
+                <li class="ui-state-default"></li>
+                <li class="ui-state-default"></li>
+                <li class="ui-state-default"></li>
+                <li class="ui-state-default"></li>
+                <li class="ui-state-default"></li>
+                <li>6</li>
+                <li class="ui-state-default"></li>
+                <li class="ui-state-default"></li>
+                <li class="ui-state-default"></li>
+                <li class="ui-state-default"></li>
+                <li class="ui-state-default"></li>
+                <li>7</li>
+                <li class="ui-state-default"></li>
+                <li class="ui-state-default"></li>
+                <li class="ui-state-default"></li>
+                <li class="ui-state-default"></li>
+                <li class="ui-state-default"></li>
+                <li>8</li>
+                <li class="ui-state-default"></li>
+                <li class="ui-state-default"></li>
+                <li class="ui-state-default"></li>
+                <li class="ui-state-default"></li>
+                <li class="ui-state-default"></li>
+            </ol>
+
+            {% csrf_token %}
+            <script>$.ajaxSetup({headers: {"X-CSRFToken": '{{ csrf_token }}'}});</script>
+
+            <button id="empty" class="button">搜尋</button>
+            <script>
+                var empty = $("#empty");
+
+                empty.click(function(){
+                    $.ajax({
+                        type: "POST",
+                        data: {empty_search: empty_search},
+                        url: "{% url 'index' %}",
+                        cache: false,
+                        dataType: "json",
+                        error: function () {
+                            alert(888);
+                        }
+                    });
+                });
+            </script>
+        </div>
+
+        <div id="tabs-2">
+            <script>
+                $(function() {
+                    var classTags = [
+                        //這裡要連班級
+                        "class1",
+                        "class2",
+                        "class3"
+                    ];
+                    $("#classtags").autocomplete({
+                        source: classTags
+                    });
+                });
+
+            </script>
+
+            <div class="ui-widget">
+                <label for="tags">班級：</label>
+                <input id="classtags">
+                <button class="button">搜尋</button>
+            </div>
+        </div>
+
+        <div id="tabs-3">
+            <script>
+                $(function() {
+                    var courseTags = [
+                        //這裡要連科目
+                        "course1",
+                        "course2",
+                        "course3",
+                        "course4",
+                        "course5",
+                    ];
+                    $("#coursetags").autocomplete({
+                        source: courseTags
+                    });
+                });
+
+                $(".button").button();
+
+            </script>
+
+            <div class="ui-widget">
+                <label for="tags">科目：</label>
+                <input id="coursetags">
+                <button class="button">搜尋</button>
+            </div>
+        </div>
+    </div>
+
+    {% for r in result %}
+        <div>{{ r }}</div>
+    {% endfor %}
+
+    <div>{{ result }}</div>
+
 </body>
+
 </html>
