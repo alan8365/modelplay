@@ -21,7 +21,7 @@ class Classes(models.Model):
         on_delete=CASCADE,
     )
 
-    # ex:資管
+    # ex:資管4甲
     name = models.CharField(
         max_length=40,
         null=True
@@ -94,6 +94,11 @@ class Course(models.Model):
         'Classes',
         on_delete=CASCADE,
         null=True,
+    )
+
+    time = models.CharField(
+        max_length=100,
+        default=''
     )
 
     # TODO 記得把TIME變成跟course變成表格

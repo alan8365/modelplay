@@ -132,3 +132,7 @@ button {
     padding: 0.4em;
     text-align: center;
 }
+
+#myTable{
+    /*display: none;*/
+}

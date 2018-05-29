@@ -11,6 +11,8 @@
     <script src="{% static 'jquery-ui.min.js' %}"></script>
     <link href="{% static 'jquery-ui.min.css' %}" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'DataTables/datatables.css' %}">
+    <script src="{% static 'DataTables/datatables.js' %}"></script>
 
     <script>
         $(function() {
@@ -122,10 +124,28 @@
                 empty.click(function(){
                     $.ajax({
                         type: "POST",
-                        data: {empty_search: empty_search},
+                        data: {type:'empty',empty_search: empty_search},
                         url: "{% url 'index' %}",
                         cache: false,
                         dataType: "json",
+                        success: function(result){
+                            table.fnClearTable();
+
+                            ans = result['result'];
+
+                            ans.forEach(function(element){
+                                table.fnAddData([
+                                    element[1],
+                                    element[2],
+                                    element[3],
+                                    element[4],
+                                    element[5]
+                                ])
+                            });
+
+{#                            $('#myTable').dataTable();#}
+{#                            table.css('display', 'block');#}
+                        },
                         error: function () {
                             alert(888);
                         }
@@ -185,11 +205,32 @@
         </div>
     </div>
 
-    {% for r in result %}
-        <div>{{ r }}</div>
-    {% endfor %}
+    <script>
+        $(document).ready(function() {
+            table = $('#myTable').dataTable();
+        });
+    </script>
 
-    <div>{{ result }}</div>
+    <table id="myTable" class="display">
+        <thead>
+            <tr>
+                <th>課程名稱</th>
+                <th>班級</th>
+                <th>老師</th>
+                <th>時間(地點)</th>
+                <th>學分</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+            <tr id="column1">
+                <td>資料庫</td>
+                <td>資管四甲</td>
+                <td>真伊棒棒</td>
+                <td>禮拜二三四節</td>
+                <td>2</td>
+            </tr>
+        </tbody>
+    </table>
 
 </body>
 

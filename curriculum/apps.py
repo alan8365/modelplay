@@ -5,12 +5,20 @@ from .models import *
 class CurriculumConfig(AppConfig):
     name = 'curriculum'
 
-def my_custom_sql(self):
+def get_sqldict_by_str(sql, model):
     with connection.cursor() as cursor:
-        cursor.execute("SELECT * FROM curriculum_course")
-        row = cursor.fetchone()
+        cursor.execute(sql)
+        rows = cursor.fetchall()
 
-    return row
+    all_element = model.objects.raw(sql)
+    column = all_element.columns
+
+    ans = []
+
+    for row in rows:
+        ans.append(dict(zip(column, row)))
+
+    return ans
 
 def sql_to_dict(raw):
     result = dict()
