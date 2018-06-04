@@ -29,8 +29,9 @@
     <div id="tabs">
         <ul>
             <li><a href="#tabs-1">搜尋</a></li>
-            <li><a href="#tabs-2">班級搜尋</a></li>
+            <li><a href="#tabs-2">老師搜尋</a></li>
             <li><a href="#tabs-3">科目搜尋</a></li>
+            <li><a href="#tabs-4">搜尋詭異東西</a></li>
         </ul>
         <div id="tabs-1">
             <script>
@@ -122,6 +123,7 @@
                 var empty = $("#empty");
 
                 empty.click(function(){
+
                     $.ajax({
                         type: "POST",
                         data: {type:'empty',empty_search: empty_search},
@@ -143,8 +145,6 @@
                                 ])
                             });
 
-{#                            $('#myTable').dataTable();#}
-{#                            table.css('display', 'block');#}
                         },
                         error: function () {
                             alert(888);
@@ -157,24 +157,59 @@
         <div id="tabs-2">
             <script>
                 $(function() {
-                    var classTags = [
-                        //這裡要連班級
-                        "class1",
-                        "class2",
-                        "class3"
+                    var teacherTags = [
+                        {% for teachername in all_teachername %}
+                            {% for teacher in teachername %}
+                                "{{ teacher }}",
+                            {% endfor %}
+                        {% endfor %}
                     ];
-                    $("#classtags").autocomplete({
-                        source: classTags
+
+                    $("#teachertags").autocomplete({
+                        source: teacherTags
                     });
                 });
-
             </script>
 
             <div class="ui-widget">
-                <label for="tags">班級：</label>
-                <input id="classtags">
-                <button class="button">搜尋</button>
+                <label for="tags">老師：</label>
+                <input id="teachertags">
+                <button id="teacherbtn" class="button">搜尋</button>
             </div>
+
+            <script>
+                var teacherbtn = $("#teacherbtn");
+
+                teacherbtn.click(function(){
+
+                    $.ajax({
+                        type: "POST",
+                        data: {type:'teacher',teacher_search: $("#teachertags").val()},
+                        url: "{% url 'index' %}",
+                        cache: false,
+                        dataType: "json",
+                        success: function(result){
+                            table.fnClearTable();
+
+                            ans = result['result'];
+
+                            ans.forEach(function(element){
+                                table.fnAddData([
+                                    element[1],
+                                    element[2],
+                                    $("#teachertags").val(),
+                                    element[3],
+                                    element[4]
+                                ])
+                            });
+                        },
+                        error: function () {
+                            alert(888);
+                        }
+                    });
+                });
+            </script>
+
         </div>
 
         <div id="tabs-3">
@@ -182,11 +217,12 @@
                 $(function() {
                     var courseTags = [
                         //這裡要連科目
-                        "course1",
-                        "course2",
-                        "course3",
-                        "course4",
-                        "course5",
+                        {% for name in all_coursename %}
+                            {% for n in name %}
+                            "{{n}}",
+                            {% endfor %}
+                        {% endfor %}
+
                     ];
                     $("#coursetags").autocomplete({
                         source: courseTags
@@ -194,14 +230,118 @@
                 });
 
                 $(".button").button();
-
             </script>
 
             <div class="ui-widget">
                 <label for="tags">科目：</label>
                 <input id="coursetags">
-                <button class="button">搜尋</button>
+                <button id="coursebtn" class="button">搜尋</button>
             </div>
+
+            <script>
+                var coursebtn = $("#coursebtn");
+
+                coursebtn.click(function(){
+
+                    $.ajax({
+                        type: "POST",
+                        data: {type:'course',course_search: $("#coursetags").val()},
+                        url: "{% url 'index' %}",
+                        cache: false,
+                        dataType: "json",
+                        success: function(result){
+                            table.fnClearTable();
+
+                            ans = result['result'];
+
+                            ans.forEach(function(element){
+                                table.fnAddData([
+                                    element[1],
+                                    element[2],
+                                    $("#teachertags").val(),
+                                    element[3],
+                                    element[4]
+                                ])
+                            });
+                        },
+                        error: function () {
+                            alert(888);
+                        }
+                    });
+                });
+            </script>
+        </div>
+
+        <div id="tabs-4">
+            <div class="ui-widget">
+                <button id="noworkbtn" class="button">搜尋沒課老師</button>
+                <button id="avgbtn" class="button">搜尋學分平均</button>
+            </div>
+
+            <script>
+                var noworkbtn = $("#noworkbtn");
+
+                noworkbtn.click(function(){
+
+                    $.ajax({
+                        type: "POST",
+                        data: {type:'nowork'},
+                        url: "{% url 'index' %}",
+                        cache: false,
+                        dataType: "json",
+                        success: function(result){
+                            table.fnClearTable();
+
+                            ans = result['result'];
+
+                            ans.forEach(function(element){
+                                table.fnAddData([
+                                    'null',
+                                    'null',
+                                    element[0],
+                                    'null',
+                                    'null'
+                                ])
+                            });
+                        },
+                        error: function () {
+                            alert(888);
+                        }
+                    });
+                });
+            </script>
+
+            <script>
+                var avgbtn = $("#avgbtn");
+
+                avgbtn.click(function(){
+                    $.ajax({
+                        type: "POST",
+                        data: {type:'avg'},
+                        url: "{% url 'index' %}",
+                        cache: false,
+                        dataType: "json",
+                        success: function(result){
+                            table.fnClearTable();
+
+                            ans = result['result'];
+
+                            ans.forEach(function(element){
+                                table.fnAddData([
+                                    element[0],
+                                    element[1],
+                                    element[2],
+                                    element[3],
+                                    null
+                                ])
+                            });
+                        },
+                        error: function () {
+                            alert(888);
+                        }
+                    });
+                });
+            </script>
         </div>
     </div>
 
@@ -214,11 +354,11 @@
     <table id="myTable" class="display">
         <thead>
             <tr>
-                <th>課程名稱</th>
-                <th>班級</th>
-                <th>老師</th>
-                <th>時間(地點)</th>
-                <th>學分</th>
+                <th id="name">課程名稱</th>
+                <th id="class">班級</th>
+                <th id="teacher">老師</th>
+                <th id="time">時間(地點)</th>
+                <th id="credit">學分</th>
             </tr>
         </thead>
         <tbody id="tbody">

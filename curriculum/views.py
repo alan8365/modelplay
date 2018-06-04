@@ -11,15 +11,110 @@ def index(request):
 
     if request.method == 'GET':
 
-        sql = "SELECT name FROM "
+        sql = "select name from curriculum_course"
 
-        return render(request, template)
+        with connection.cursor() as c:
+            c.execute(sql)
+            all_coursename = c.fetchall()
+
+        sql = "select name from curriculum_teacher where name like '___'"
+
+        with connection.cursor() as c:
+            c.execute(sql)
+            all_teachername = c.fetchall()
+
+        return render(request, template, {'all_coursename':all_coursename, 'all_teachername':all_teachername})
 
     if request.method == 'POST':
         data = dict(request.POST)
         print(data)
 
-        if data['type'][0] == 'empty':
+        if data['type'][0] == 'teacher':
+
+            teacher_search = data['teacher_search'][0]
+
+            sql = '''select c.id, c.name, cl.name, c.time, c.credit
+                     from curriculum_course as c
+                     join curriculum_classes as cl on c.classes_id = cl.id
+                     where c.teacher_id in (select id from curriculum_teacher as t where t.name like "%''' + str(teacher_search) + '%")'
+
+            with connection.cursor() as c:
+                c.execute(sql)
+                all_course = c.fetchall()
+
+            response = JsonResponse({'result': all_course})
+
+            return response
+
+        elif data['type'][0] == 'course':
+
+            course_search = data['course_search'][0]
+
+            sql = '''
+                select c.id, c.name, cl.name, t.name, c.time, c.credit
+                from
+                (select *
+                from curriculum_course 
+                where name like "%''' + str(course_search) + '''%") as c
+                join curriculum_classes as cl on c.classes_id = cl.id
+                join curriculum_teacher as t on c.teacher_id = t.id
+            '''
+
+            with connection.cursor() as c:
+                c.execute(sql)
+                all_course = c.fetchall()
+
+            response = JsonResponse({'result': all_course})
+
+            return response
+
+        elif data['type'][0] == 'nowork':
+
+            sql = '''
+                select name
+                from curriculum_teacher as t
+                where not exists(select * from curriculum_course as c where t.id = c.teacher_id)
+                and t.name like "___"
+            '''
+
+            with connection.cursor() as c:
+                c.execute(sql)
+                all_teacher = c.fetchall()
+
+            response = JsonResponse({'result': all_teacher})
+
+            return response
+
+        elif data['type'][0] == 'avg':
+
+            sql = '''
+            select t.name, sum(c.credit) as sc, count(c.id) as cc, avg(c.credit)
+            from curriculum_teacher as t
+            join curriculum_course as c on t.id = c.teacher_id
+            group by t.name
+            having sc < (select max(sc)
+            from
+            (select sum(c.credit) as sc 
+            from curriculum_teacher as t
+            join curriculum_course as c on t.id = c.teacher_id
+            group by t.id) as bubu)
+            and sc > (select min(sc)
+            from
+            (select sum(c.credit) as sc 
+            from curriculum_teacher as t
+            join curriculum_course as c on t.id = c.teacher_id
+            group by t.id) as bubu)
+            '''
+
+            with connection.cursor() as c:
+                c.execute(sql)
+                all_teacher = c.fetchall()
+
+            response = JsonResponse({'result': all_teacher})
+
+            return response
+
+        elif data['type'][0] == 'empty':
             empty_search = data['empty_search[]']
             ans = set()
             searchset = set()
@@ -31,9 +126,10 @@ def index(request):
             #          WHERE c.id = ct.course_id and ct.time_id = t.id;'''
 
             sql = '''
-                SELECT c.id, c.name, cl.name, t.name, c.time, c.credit
-                FROM (curriculum_course as c join curriculum_teacher as t on t.id = teacher_id)
-                JOIN curriculum_classes as cl ON cl.id = c.classes_id
+                select c.id, c.name, cl.name, t.name, c.time, c.credit
+                from curriculum_course as c 
+                join curriculum_teacher as t on t.id = teacher_id
+                join curriculum_classes as cl on cl.id = c.classes_id
             '''
 
             for i in empty_search:
@@ -56,9 +152,9 @@ def index(request):
             for i in all_courseid:
                 sql = '''
                         SELECT week, period
-                        FROM curriculum_coursetime AS ct , 
+                        FROM curriculum_coursetime AS ct ,
                                curriculum_time AS t
-                        WHERE ct.course_id = "''' + i[0] + '''" 
+                        WHERE ct.course_id = "''' + i[0] + '''"
                         AND ct.time_id = t.id
                     '''
 
