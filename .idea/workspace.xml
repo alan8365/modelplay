@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f6e28159-a78f-44ae-9c27-f2328c64b2d3" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/curriculum/static/style.css" afterPath="$PROJECT_DIR$/curriculum/static/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/curriculum/views.py" afterPath="$PROJECT_DIR$/curriculum/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/curriculum/index.html" afterPath="$PROJECT_DIR$/templates/curriculum/index.html" />
     </list>
@@ -29,8 +30,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/curriculum/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2760">
-              <caret line="70" column="5" lean-forward="false" selection-start-line="70" selection-start-column="5" selection-end-line="70" selection-end-column="5" />
+            <state relative-caret-position="3040">
+              <caret line="77" column="17" lean-forward="false" selection-start-line="77" selection-start-column="17" selection-end-line="77" selection-end-column="17" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -53,21 +54,24 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/curriculum/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="640">
-              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state relative-caret-position="-233">
+              <caret line="9" column="38" lean-forward="true" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
-                <marker date="1527767270700" expanded="true" signature="303:337" ph="SELECT name curricu" />
-                <marker date="1527767270700" expanded="true" signature="464:521" ph="select name curriculum_teacher" />
-                <marker date="1527767270700" expanded="true" signature="953:1226" ph="select c.id,... curriculum_course" />
-                <marker date="1527767270700" expanded="true" signature="2262:2453" ph="select name curriculum_teacher" />
-                <marker date="1527767270700" expanded="true" signature="2352:2414" ph="select * fro... curriculum_course" />
-                <marker date="1527767270700" expanded="true" signature="2754:3427" ph="select t.nam... curriculum_teacher" />
-                <marker date="1527767270700" expanded="true" signature="2980:3191" ph="select max(s... sum" />
-                <marker date="1527767270700" expanded="true" signature="3025:3182" ph="select sum(c... curriculum_teacher" />
-                <marker date="1527767270700" expanded="true" signature="3215:3426" ph="select min(s... sum" />
-                <marker date="1527767270700" expanded="true" signature="3260:3417" ph="select sum(c... curriculum_teacher" />
-                <marker date="1527767270700" expanded="true" signature="4131:4366" ph="select c.id,... curriculum_course" />
+                <marker date="1528286667913" expanded="true" signature="303:337" ph="SELECT name curricu" />
+                <marker date="1528286667913" expanded="true" signature="464:521" ph="select name curriculum_teacher" />
+                <marker date="1528286667913" expanded="true" signature="649:687" ph="select name curriculum_department" />
+                <marker date="1528286667913" expanded="true" signature="1163:1517" ph="select c.id,... curriculum_course" />
+                <marker date="1528286667913" expanded="true" signature="2553:2744" ph="select name curriculum_teacher" />
+                <marker date="1528286667913" expanded="true" signature="2643:2705" ph="select * fro... curriculum_course" />
+                <marker date="1528286667913" expanded="true" signature="3045:3271" ph="select t.nam... curriculum_teacher" />
+                <marker date="1528286667913" expanded="true" signature="3045:3718" ph="select t.nam... curriculum_teacher" />
+                <marker date="1528286667913" expanded="true" signature="3271:3482" ph="select max(s... sum" />
+                <marker date="1528286667913" expanded="true" signature="3316:3473" ph="select sum(c... curriculum_teacher" />
+                <marker date="1528286667913" expanded="true" signature="3506:3717" ph="select min(s... sum" />
+                <marker date="1528286667913" expanded="true" signature="3551:3708" ph="select sum(c... curriculum_teacher" />
+                <marker date="1528286667913" expanded="true" signature="4159:4523" ph="select c.id,... curriculum_course" />
+                <marker date="1528286667913" expanded="true" signature="4761:5008" ph="select c.id,... curriculum_course" />
               </folding>
             </state>
           </provider>
@@ -76,8 +80,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/curriculum/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4600">
-              <caret line="115" column="17" lean-forward="false" selection-start-line="115" selection-start-column="17" selection-end-line="115" selection-end-column="17" />
+            <state relative-caret-position="4800">
+              <caret line="120" column="22" lean-forward="false" selection-start-line="120" selection-start-column="17" selection-end-line="120" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -86,8 +90,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/curriculum/static/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5160">
-              <caret line="129" column="12" lean-forward="false" selection-start-line="129" selection-start-column="12" selection-end-line="129" selection-end-column="12" />
+            <state relative-caret-position="5880">
+              <caret line="147" column="22" lean-forward="false" selection-start-line="147" selection-start-column="22" selection-end-line="147" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -115,9 +119,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>D8622</find>
-      <find>１０</find>
-      <find>admin</find>
       <find>b</find>
       <find>bas</find>
       <find>base</find>
@@ -143,8 +144,11 @@
       <find>企管系經營管理專班四１</find>
       <find>班級</find>
       <find>table</find>
-      <find>ajax</find>
+      <find>sql</find>
+      <find>empty</find>
       <find>in</find>
+      <find>selected_department</find>
+      <find>ajax</find>
     </findStrings>
     <dirStrings>
       <dir>D:\homework\python\modelplay</dir>
@@ -168,7 +172,6 @@
         <option value="$PROJECT_DIR$/modelplay/settings.py" />
         <option value="$PROJECT_DIR$/curriculum/apps.py" />
         <option value="$PROJECT_DIR$/curriculum/urls.py" />
-        <option value="$PROJECT_DIR$/curriculum/static/style.css" />
         <option value="$PROJECT_DIR$/fiveyeardata.html" />
         <option value="$PROJECT_DIR$/cleanfiveyeardata.html" />
         <option value="$PROJECT_DIR$/cleanfouryeardata.html" />
@@ -176,6 +179,7 @@
         <option value="$PROJECT_DIR$/curriculum/models.py" />
         <option value="$PROJECT_DIR$/curriculum/views.py" />
         <option value="$PROJECT_DIR$/templates/curriculum/index.html" />
+        <option value="$PROJECT_DIR$/curriculum/static/style.css" />
       </list>
     </option>
   </component>
@@ -207,16 +211,16 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches">
-        <subPane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
           <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyProjectNode" />
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Scratches" />
-              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyRootNode" />
+            <PATH_ELEMENT USER_OBJECT="modelplay">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -327,16 +331,16 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
+      <pane id="Scratches">
+        <subPane>
           <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyProjectNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="modelplay">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Scratches" />
+              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyRootNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -346,20 +350,20 @@
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../EasyCoding" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\homework\python\modelplay\bak" />
+      <recent name="D:\homework\python\modelplay\curriculum\static" />
+      <recent name="D:\homework\python\modelplay\templates\curriculum" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\homework\python\modelplay" />
       <recent name="D:\homework\python\modelplay\curriculum\static" />
       <recent name="D:\homework\python\modelplay\templates\curriculum" />
       <recent name="D:\homework\python\modelplay\curriculum" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\homework\python\modelplay\bak" />
-      <recent name="D:\homework\python\modelplay\curriculum\static" />
-      <recent name="D:\homework\python\modelplay\templates\curriculum" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -655,7 +659,14 @@
       <option name="project" value="LOCAL" />
       <updated>1527561388855</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="i hate windows update">
+      <created>1528100699691</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1528100699691</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView">
@@ -668,14 +679,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="-11" width="1942" height="1102" extended-state="0" />
+    <frame x="-11" y="-11" width="1942" height="1102" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20918919" sideWeight="0.49261993" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22054054" sideWeight="0.49261993" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32852387" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32963374" sideWeight="0.5075676" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27524972" sideWeight="0.49243245" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21975583" sideWeight="0.49243245" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -699,19 +710,19 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32963374" sideWeight="0.5075676" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13096559" sideWeight="0.49243245" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27524972" sideWeight="0.49243245" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34406215" sideWeight="0.49352053" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20918919" sideWeight="0.49261993" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20918919" sideWeight="0.49261993" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30237582" sideWeight="0.50738007" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3991131" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30237582" sideWeight="0.50738007" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991362" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
@@ -725,7 +736,8 @@
     <MESSAGE value="init" />
     <MESSAGE value="web update" />
     <MESSAGE value="test update" />
-    <option name="LAST_COMMIT_MESSAGE" value="test update" />
+    <MESSAGE value="i hate windows update" />
+    <option name="LAST_COMMIT_MESSAGE" value="i hate windows update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -754,17 +766,20 @@
           <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
-            <marker date="1527767270700" expanded="true" signature="303:337" ph="SELECT name curricu" />
-            <marker date="1527767270700" expanded="true" signature="464:521" ph="select name curriculum_teacher" />
-            <marker date="1527767270700" expanded="true" signature="953:1226" ph="select c.id,... curriculum_course" />
-            <marker date="1527767270700" expanded="true" signature="2262:2453" ph="select name curriculum_teacher" />
-            <marker date="1527767270700" expanded="true" signature="2352:2414" ph="select * fro... curriculum_course" />
-            <marker date="1527767270700" expanded="true" signature="2754:3427" ph="select t.nam... curriculum_teacher" />
-            <marker date="1527767270700" expanded="true" signature="2980:3191" ph="select max(s... sum" />
-            <marker date="1527767270700" expanded="true" signature="3025:3182" ph="select sum(c... curriculum_teacher" />
-            <marker date="1527767270700" expanded="true" signature="3215:3426" ph="select min(s... sum" />
-            <marker date="1527767270700" expanded="true" signature="3260:3417" ph="select sum(c... curriculum_teacher" />
-            <marker date="1527767270700" expanded="true" signature="4131:4366" ph="select c.id,... curriculum_course" />
+            <marker date="1528286667913" expanded="true" signature="303:337" ph="SELECT name curricu" />
+            <marker date="1528286667913" expanded="true" signature="464:521" ph="select name curriculum_teacher" />
+            <marker date="1528286667913" expanded="true" signature="649:687" ph="select name curriculum_department" />
+            <marker date="1528286667913" expanded="true" signature="1163:1517" ph="select c.id,... curriculum_course" />
+            <marker date="1528286667913" expanded="true" signature="2553:2744" ph="select name curriculum_teacher" />
+            <marker date="1528286667913" expanded="true" signature="2643:2705" ph="select * fro... curriculum_course" />
+            <marker date="1528286667913" expanded="true" signature="3045:3271" ph="select t.nam... curriculum_teacher" />
+            <marker date="1528286667913" expanded="true" signature="3045:3718" ph="select t.nam... curriculum_teacher" />
+            <marker date="1528286667913" expanded="true" signature="3271:3482" ph="select max(s... sum" />
+            <marker date="1528286667913" expanded="true" signature="3316:3473" ph="select sum(c... curriculum_teacher" />
+            <marker date="1528286667913" expanded="true" signature="3506:3717" ph="select min(s... sum" />
+            <marker date="1528286667913" expanded="true" signature="3551:3708" ph="select sum(c... curriculum_teacher" />
+            <marker date="1528286667913" expanded="true" signature="4159:4523" ph="select c.id,... curriculum_course" />
+            <marker date="1528286667913" expanded="true" signature="4761:5008" ph="select c.id,... curriculum_course" />
           </folding>
         </state>
       </provider>
@@ -1063,8 +1078,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/curriculum/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2760">
-          <caret line="70" column="5" lean-forward="false" selection-start-line="70" selection-start-column="5" selection-end-line="70" selection-end-column="5" />
+        <state relative-caret-position="3040">
+          <caret line="77" column="17" lean-forward="false" selection-start-line="77" selection-start-column="17" selection-end-line="77" selection-end-column="17" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
@@ -1079,22 +1094,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/curriculum/static/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5160">
-          <caret line="129" column="12" lean-forward="false" selection-start-line="129" selection-start-column="12" selection-end-line="129" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/curriculum/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4600">
-          <caret line="115" column="17" lean-forward="false" selection-start-line="115" selection-start-column="17" selection-end-line="115" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mylittletoy.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
@@ -1105,23 +1104,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/curriculum/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4800">
+          <caret line="120" column="22" lean-forward="false" selection-start-line="120" selection-start-column="17" selection-end-line="120" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/curriculum/static/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5880">
+          <caret line="147" column="22" lean-forward="false" selection-start-line="147" selection-start-column="22" selection-end-line="147" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/curriculum/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="640">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="-233">
+          <caret line="9" column="38" lean-forward="true" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
-            <marker date="1527767270700" expanded="true" signature="303:337" ph="SELECT name curricu" />
-            <marker date="1527767270700" expanded="true" signature="464:521" ph="select name curriculum_teacher" />
-            <marker date="1527767270700" expanded="true" signature="953:1226" ph="select c.id,... curriculum_course" />
-            <marker date="1527767270700" expanded="true" signature="2262:2453" ph="select name curriculum_teacher" />
-            <marker date="1527767270700" expanded="true" signature="2352:2414" ph="select * fro... curriculum_course" />
-            <marker date="1527767270700" expanded="true" signature="2754:3427" ph="select t.nam... curriculum_teacher" />
-            <marker date="1527767270700" expanded="true" signature="2980:3191" ph="select max(s... sum" />
-            <marker date="1527767270700" expanded="true" signature="3025:3182" ph="select sum(c... curriculum_teacher" />
-            <marker date="1527767270700" expanded="true" signature="3215:3426" ph="select min(s... sum" />
-            <marker date="1527767270700" expanded="true" signature="3260:3417" ph="select sum(c... curriculum_teacher" />
-            <marker date="1527767270700" expanded="true" signature="4131:4366" ph="select c.id,... curriculum_course" />
+            <marker date="1528286667913" expanded="true" signature="303:337" ph="SELECT name curricu" />
+            <marker date="1528286667913" expanded="true" signature="464:521" ph="select name curriculum_teacher" />
+            <marker date="1528286667913" expanded="true" signature="649:687" ph="select name curriculum_department" />
+            <marker date="1528286667913" expanded="true" signature="1163:1517" ph="select c.id,... curriculum_course" />
+            <marker date="1528286667913" expanded="true" signature="2553:2744" ph="select name curriculum_teacher" />
+            <marker date="1528286667913" expanded="true" signature="2643:2705" ph="select * fro... curriculum_course" />
+            <marker date="1528286667913" expanded="true" signature="3045:3271" ph="select t.nam... curriculum_teacher" />
+            <marker date="1528286667913" expanded="true" signature="3045:3718" ph="select t.nam... curriculum_teacher" />
+            <marker date="1528286667913" expanded="true" signature="3271:3482" ph="select max(s... sum" />
+            <marker date="1528286667913" expanded="true" signature="3316:3473" ph="select sum(c... curriculum_teacher" />
+            <marker date="1528286667913" expanded="true" signature="3506:3717" ph="select min(s... sum" />
+            <marker date="1528286667913" expanded="true" signature="3551:3708" ph="select sum(c... curriculum_teacher" />
+            <marker date="1528286667913" expanded="true" signature="4159:4523" ph="select c.id,... curriculum_course" />
+            <marker date="1528286667913" expanded="true" signature="4761:5008" ph="select c.id,... curriculum_course" />
           </folding>
         </state>
       </provider>

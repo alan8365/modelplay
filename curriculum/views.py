@@ -23,7 +23,13 @@ def index(request):
             c.execute(sql)
             all_teachername = c.fetchall()
 
-        return render(request, template, {'all_coursename':all_coursename, 'all_teachername':all_teachername})
+        sql = "select name from curriculum_department"
+
+        with connection.cursor() as c:
+            c.execute(sql)
+            all_departmentname = c.fetchall()
+
+        return render(request, template, {'all_coursename':all_coursename, 'all_teachername':all_teachername, 'all_departmentname':all_departmentname})
 
     if request.method == 'POST':
         data = dict(request.POST)
@@ -33,9 +39,10 @@ def index(request):
 
             teacher_search = data['teacher_search'][0]
 
-            sql = '''select c.id, c.name, cl.name, c.time, c.credit
+            sql = '''select c.id, c.name, cl.name, t.name, c.time, c.credit
                      from curriculum_course as c
                      join curriculum_classes as cl on c.classes_id = cl.id
+                     join curriculum_teacher as t on t.id = c.teacher_id
                      where c.teacher_id in (select id from curriculum_teacher as t where t.name like "%''' + str(teacher_search) + '%")'
 
             with connection.cursor() as c:
@@ -115,22 +122,37 @@ def index(request):
             return response
 
         elif data['type'][0] == 'empty':
-            empty_search = data['empty_search[]']
-            ans = set()
+
+            if data.get('department[]'):
+                department = data['department[]']
+                print(department)
+
+                sql = '''
+                    select c.id, c.name, cl.name, t.name, c.time, c.credit
+                    from curriculum_course as c 
+                    join curriculum_teacher as t on t.id = teacher_id
+                    join curriculum_classes as cl on cl.id = c.classes_id
+                    join curriculum_department as d on d.id = cl.department_id 
+                    where d.name = "''' + department[0] + '" '
+
+                for i in range(1, len(department)):
+                    sql += 'or d.name = "' + department[i] + '" '
+
+                print(sql)
+            else:
+                sql = '''
+                    select c.id, c.name, cl.name, t.name, c.time, c.credit
+                    from curriculum_course as c 
+                    join curriculum_teacher as t on t.id = teacher_id
+                    join curriculum_classes as cl on cl.id = c.classes_id
+                '''
+
+            with connection.cursor() as c:
+                c.execute(sql)
+                all_courseid = c.fetchall()
+
             searchset = set()
-
-            # sql = '''SELECT c.name, t.week, t.period
-            #          FROM curriculum_course as c,
-            #                 curriculum_coursetime as ct,
-            #                 curriculum_time as t
-            #          WHERE c.id = ct.course_id and ct.time_id = t.id;'''
-
-            sql = '''
-                select c.id, c.name, cl.name, t.name, c.time, c.credit
-                from curriculum_course as c 
-                join curriculum_teacher as t on t.id = teacher_id
-                join curriculum_classes as cl on cl.id = c.classes_id
-            '''
+            empty_search = data['empty_search[]']
 
             for i in empty_search:
                 i = int(i)
@@ -141,13 +163,9 @@ def index(request):
                     (week, period)
                 )
 
-            with connection.cursor() as c:
-                c.execute(sql)
-                all_courseid = c.fetchall()
-
-            print(all_courseid)
-
             c = connection.cursor()
+
+            ans = set()
 
             for i in all_courseid:
                 sql = '''

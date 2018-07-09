@@ -10,6 +10,7 @@ h5 {
 
 body {
     font-family: "Trebuchet MS", sans-serif;
+
 }
 
 .demoHeaders {
@@ -70,7 +71,7 @@ hr {
 /*選擇空堂區域*/
 
 * {
-    font-size: 10px;
+    font-size: 16px;
     font-family: Microsoft JhengHei;
 }
 
@@ -92,6 +93,8 @@ hr {
     padding: 0;
     width: 400px;
     height: 400px;
+
+    font-size: 10px;
 }
 
 #selectable li {
@@ -135,4 +138,18 @@ button {
 
 #myTable{
     /*display: none;*/
+}
+
+.selected_department{
+    margin-top: 20px;
+}
+
+.dbutton{
+    margin-left: 10px;
+}
+
+#dstab{
+    position: absolute;
+    top: 4em;
+    left: 400px;
 }
